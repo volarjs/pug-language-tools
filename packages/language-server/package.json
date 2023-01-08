@@ -1,6 +1,6 @@
 {
-	"name": "@html1-language-tools/language-server",
-	"version": "0.0.1",
+	"name": "@volar/pug-language-server",
+	"version": "1.0.24",
 	"main": "out/index.js",
 	"license": "MIT",
 	"files": [
@@ -8,13 +8,16 @@
 		"out/**/*.d.ts"
 	],
 	"bin": {
-		"html1-language-server": "./bin/html1-language-server.js"
+		"pug-language-server": "./bin/pug-language-server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/johnsoncodehk/volar.git",
+		"directory": "pug-language-tools/pug-language-server"
 	},
 	"dependencies": {
-		"@html1-language-tools/language-core": "workspace:*",
-		"@volar-plugins/css": "1.0.24",
-		"@volar-plugins/emmet": "1.0.24",
-		"@volar-plugins/html": "1.0.24",
+		"@volar-plugins/pug": "1.0.24",
+		"@volar-plugins/pug-beautify": "1.0.24",
 		"@volar/language-server": "1.0.24"
 	}
 }

@@ -19,8 +19,8 @@
 		"noUnusedParameters": true,
 		"baseUrl": "./",
 		"paths": {
-			"@html1-language-tools/*": [
-				"packages/*/src"
+			"@volar/pug-language-server": [
+				"packages/language-server/src"
 			],
 		},
 	},

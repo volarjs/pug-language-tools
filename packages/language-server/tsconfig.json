@@ -2,14 +2,9 @@
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
 		"outDir": "out",
-		"rootDir": "src"
+		"rootDir": "src",
 	},
 	"include": [
 		"src"
 	],
-	"references": [
-		{
-			"path": "../language-core/tsconfig.json"
-		}
-	]
 }
