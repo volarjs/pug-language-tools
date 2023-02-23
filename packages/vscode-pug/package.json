@@ -7,8 +7,9 @@
 		"url": "https://github.com/johnsoncodehk/volar.git",
 		"directory": "pug-language-tools/vscode-pug"
 	},
-	"displayName": "Pug Language Features (Volar)",
-	"description": "Pug Language Features (Volar)",
+	"icon": "images/icon.png",
+	"displayName": "Pug Language Features - Volar.js",
+	"description": "Pug Language Features - Volar.js",
 	"author": "johnsoncodehk",
 	"publisher": "johnsoncodehk",
 	"engines": {
