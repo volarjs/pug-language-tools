@@ -40,14 +40,15 @@
 	"scripts": {
 		"prebuild": "cd ../.. && npm run build",
 		"build": "node scripts/build -- --minify",
+		"watch": "npm run build -- --watch",
 		"pack": "npm run build && vsce package --pre-release",
 		"release": "npm run build && vsce publish --pre-release"
 	},
 	"devDependencies": {
 		"@types/vscode": "1.67.0",
-		"@volar/language-server": "1.0.24",
+		"@volar/language-server": "1.2.0-alpha.19",
 		"@volar/pug-language-server": "1.0.24",
-		"esbuild": "latest",
+		"esbuild": "0.15.18",
 		"typesafe-path": "^0.2.2",
 		"vsce": "latest",
 		"vscode-languageclient": "^8.0.2"

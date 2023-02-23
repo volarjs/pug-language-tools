@@ -16,8 +16,8 @@
 		"directory": "pug-language-tools/pug-language-server"
 	},
 	"dependencies": {
-		"@volar-plugins/pug": "1.0.24",
-		"@volar-plugins/pug-beautify": "1.0.24",
-		"@volar/language-server": "1.0.24"
+		"@volar-plugins/pug": "2.0.0-alpha.12",
+		"@volar-plugins/pug-beautify": "2.0.0-alpha.12",
+		"@volar/language-server": "1.2.0-alpha.19"
 	}
 }
