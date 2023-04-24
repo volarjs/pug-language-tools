@@ -9,7 +9,8 @@
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				"--disable-extensions",
-				"--extensionDevelopmentPath=${workspaceRoot}/packages/vscode-pug"
+				"--extensionDevelopmentPath=${workspaceRoot}/packages/vscode-pug",
+				"--folder-uri=${workspaceRoot}/sample",
 			],
 			"outFiles": [
 				"${workspaceRoot}/*/*/out/**/*.js"

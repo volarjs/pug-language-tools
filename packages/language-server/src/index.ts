@@ -1,18 +1,15 @@
-import * as createPugPlugin from '@volar-plugins/pug';
-import * as createPugBeautifyPlugin from '@volar-plugins/pug-beautify';
+import createPugPlugin from '@volar-plugins/pug';
+import createPugBeautifyPlugin from '@volar-plugins/pug-beautify';
 import { createConnection, startLanguageServer, LanguageServerPlugin } from '@volar/language-server/node';
 
-const plugin: LanguageServerPlugin = () => ({
-	tsconfigExtraFileExtensions: [],
-	diagnosticDocumentSelector: [{ language: 'jade' }],
-	extensions: {
-		fileRenameOperationFilter: [],
-		fileWatcher: [],
-	},
+const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
+	extraFileExtensions: [],
+	watchFileExtensions: [],
 	resolveConfig(config) {
 		config.plugins ??= {};
 		config.plugins.pug ??= createPugPlugin();
 		config.plugins['pug-beautify'] ??= createPugBeautifyPlugin();
+		return config;
 	},
 });
 

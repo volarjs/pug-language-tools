@@ -8,7 +8,6 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	const initializationOptions: LanguageServerInitializationOptions = {
 		diagnosticModel: DiagnosticModel.Pull, // not matter because pug diagnostic is very fast
-		disableFileWatcher: true, // don't care about file changes
 	};
 	const serverModule = vscode.Uri.joinPath(context.extensionUri, 'server.js');
 	const runOptions = { execArgv: <string[]>[] };
