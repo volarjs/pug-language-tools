@@ -38,7 +38,7 @@ importers:
         specifier: 1.4.1
         version: 1.4.1
       '@volar/pug-language-server':
-        specifier: 1.0.24
+        specifier: 1.1.0
         version: link:../language-server
       esbuild:
         specifier: 0.15.18
