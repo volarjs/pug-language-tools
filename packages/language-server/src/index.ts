@@ -1,14 +1,14 @@
-import createPugPlugin from '@volar-plugins/pug';
-import createPugBeautifyPlugin from '@volar-plugins/pug-beautify';
+import createPugService from 'volar-service-pug';
+import createPugBeautifyService from 'volar-service-pug-beautify';
 import { createConnection, startLanguageServer, LanguageServerPlugin } from '@volar/language-server/node';
 
 const plugin: LanguageServerPlugin = (): ReturnType<LanguageServerPlugin> => ({
 	extraFileExtensions: [],
 	watchFileExtensions: [],
 	resolveConfig(config) {
-		config.plugins ??= {};
-		config.plugins.pug ??= createPugPlugin();
-		config.plugins['pug-beautify'] ??= createPugBeautifyPlugin();
+		config.services ??= {};
+		config.services.pug ??= createPugService();
+		config.services['pug-beautify'] ??= createPugBeautifyService();
 		return config;
 	},
 });

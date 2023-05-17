@@ -8,8 +8,8 @@
 		"directory": "packages/vscode-pug"
 	},
 	"icon": "images/icon.png",
-	"displayName": "Pug Language Features - Volar.js",
-	"description": "Pug Language Features - Volar.js",
+	"displayName": "Pug Language Features",
+	"description": "Pug Language Features",
 	"author": "johnsoncodehk",
 	"publisher": "johnsoncodehk",
 	"engines": {
@@ -47,7 +47,7 @@
 	},
 	"devDependencies": {
 		"@types/vscode": "1.67.0",
-		"@volar/language-server": "1.4.1",
+		"@volar/language-server": "1.6.4",
 		"@volar/pug-language-server": "1.1.0",
 		"esbuild": "0.15.18",
 		"typesafe-path": "^0.2.2",
