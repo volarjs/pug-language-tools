@@ -1,4 +1,6 @@
 import { InitializationOptions, DiagnosticModel } from '@volar/language-server';
+import * as protocol from '@volar/language-server/protocol';
+import type { ExportsInfoForLabs } from '@volar/vscode';
 import * as vscode from 'vscode';
 import * as lsp from 'vscode-languageclient/node';
 
@@ -34,7 +36,15 @@ export async function activate(context: vscode.ExtensionContext) {
 		serverOptions,
 		clientOptions,
 	);
-	await client.start();
+	client.start();
+
+	return {
+		volarLabs: {
+			version: '1.6.2',
+			languageClients: [client],
+			languageServerProtocol: protocol,
+		},
+	} satisfies ExportsInfoForLabs;
 }
 
 export function deactivate(): Thenable<any> | undefined {

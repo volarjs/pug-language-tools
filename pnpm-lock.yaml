@@ -40,6 +40,9 @@ importers:
       '@volar/pug-language-server':
         specifier: 1.1.0
         version: link:../language-server
+      '@volar/vscode':
+        specifier: 1.6.4
+        version: 1.6.4(@types/vscode@1.67.0)(vscode-languageclient@8.0.2)
       esbuild:
         specifier: 0.15.18
         version: 0.15.18
@@ -120,6 +123,20 @@ packages:
     resolution: {integrity: sha512-pAyqHT3jKkT6xdSLLAmTRLZtC3K01qy2Afo3ToTmjQMok+a/Rw6AxiUea8TuVq4UEEkGlNZWA9FXFJSLj2/XlQ==}
     dependencies:
       muggle-string: 0.3.1
+
+  /@volar/vscode@1.6.4(@types/vscode@1.67.0)(vscode-languageclient@8.0.2):
+    resolution: {integrity: sha512-qHM0gtRXssvbmEaDoLkXMW7h6gejYPmonllBjIhxz2WGTZCTrvc/+Ry+OY8hQzFtENV7885I/0dqzoLmEPMxZA==}
+    peerDependencies:
+      '@types/vscode': '*'
+      vscode-languageclient: '*'
+    dependencies:
+      '@types/vscode': 1.67.0
+      '@volar/language-server': 1.6.4
+      '@volar/source-map': 1.6.4
+      typesafe-path: 0.2.2
+      vscode-languageclient: 8.0.2
+      vscode-nls: 5.2.0
+    dev: true
 
   /@vscode/l10n@0.0.11:
     resolution: {integrity: sha512-ukOMWnCg1tCvT7WnDfsUKQOFDQGsyR5tNgRpwmqi+5/vzU3ghdDXzvIM4IOPdSb3OeSsBNvmSL8nxIVOqi2WXA==}
@@ -1146,6 +1163,10 @@ packages:
     hasBin: true
     dependencies:
       vscode-languageserver-protocol: 3.17.3
+
+  /vscode-nls@5.2.0:
+    resolution: {integrity: sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng==}
+    dev: true
 
   /vscode-uri@3.0.7:
     resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
