@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "vscode-pug",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/volarjs/pug-language-tools.git",
@@ -48,7 +48,7 @@
 	"devDependencies": {
 		"@types/vscode": "1.67.0",
 		"@volar/language-server": "1.6.4",
-		"@volar/pug-language-server": "1.1.0",
+		"@volar/pug-language-server": "1.1.1",
 		"@volar/vscode": "1.6.4",
 		"esbuild": "0.15.18",
 		"typesafe-path": "^0.2.2",
