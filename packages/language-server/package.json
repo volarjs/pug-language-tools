@@ -16,10 +16,10 @@
 		"directory": "packages/language-server"
 	},
 	"dependencies": {
-		"@volar/language-server": "1.6.4",
-		"@volar/language-service": "1.6.4",
-		"@volar/source-map": "1.6.4",
-		"volar-service-pug": "0.0.3",
-		"volar-service-pug-beautify": "0.0.3"
+		"@volar/language-server": "~1.8.0",
+		"@volar/language-service": "~1.8.0",
+		"@volar/source-map": "~1.8.0",
+		"volar-service-pug": "0.0.9-patch.1",
+		"volar-service-pug-beautify": "0.0.1"
 	}
 }
