@@ -1,4 +1,4 @@
-require('esbuild').build({
+require('esbuild').context({
 	entryPoints: {
 		client: './out/client.js',
 		server: './node_modules/@volar/pug-language-server/bin/pug-language-server.js',
@@ -12,9 +12,7 @@ require('esbuild').build({
 	format: 'cjs',
 	platform: 'node',
 	tsconfig: '../../tsconfig.build.json',
-	define: { 'process.env.NODE_ENV': '"production"' },
 	minify: process.argv.includes('--minify'),
-	watch: process.argv.includes('--watch'),
 	plugins: [
 		{
 			name: 'umd2esm',
@@ -28,4 +26,14 @@ require('esbuild').build({
 			},
 		},
 	],
-}).catch(() => process.exit(1))
+}).then(async ctx => {
+	console.log('building...');
+	if (process.argv.includes('--watch')) {
+		await ctx.watch();
+		console.log('watching...');
+	} else {
+		await ctx.rebuild();
+		await ctx.dispose();
+		console.log('finished.');
+	}
+})

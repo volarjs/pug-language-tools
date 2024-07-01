@@ -16,5 +16,6 @@
 	"devDependencies": {
 		"@types/node": "latest",
 		"typescript": "latest"
-	}
+	},
+	"packageManager": "pnpm@9.4.0"
 }
