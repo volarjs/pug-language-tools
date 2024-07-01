@@ -13,7 +13,7 @@
 	"author": "johnsoncodehk",
 	"publisher": "johnsoncodehk",
 	"engines": {
-		"vscode": "^1.67.0"
+		"vscode": "^1.83.0"
 	},
 	"activationEvents": [
 		"onLanguage:jade"
@@ -24,7 +24,7 @@
 			"type": "object",
 			"title": "Volar-Pug",
 			"properties": {
-				"volar-pug-language-server.trace.server": {
+				"pug-language-server.trace.server": {
 					"scope": "window",
 					"type": "string",
 					"enum": [
@@ -46,13 +46,11 @@
 		"release": "npm run build && vsce publish"
 	},
 	"devDependencies": {
-		"@types/vscode": "1.67.0",
-		"@volar/language-server": "~1.8.0",
+		"@types/vscode": "1.83.0",
+		"@volar/language-server" :"~2.4.0-alpha.6",
 		"@volar/pug-language-server": "1.1.2",
-		"@volar/vscode": "~1.8.0",
-		"esbuild": "0.15.18",
-		"typesafe-path": "^0.2.2",
-		"vsce": "latest",
-		"vscode-languageclient": "^8.0.2"
+		"@volar/vscode": "~2.4.0-alpha.6",
+		"esbuild": "latest",
+		"vsce": "latest"
 	}
 }

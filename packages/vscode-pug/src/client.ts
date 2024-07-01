@@ -1,36 +1,30 @@
-import { InitializationOptions, DiagnosticModel } from '@volar/language-server';
-import * as protocol from '@volar/language-server/protocol';
-import type { ExportsInfoForLabs } from '@volar/vscode';
+import * as serverProtocol from '@volar/language-server/protocol';
+import { BaseLanguageClient, createLabsInfo, LanguageClientOptions } from '@volar/vscode';
+import { LanguageClient, ServerOptions, TransportKind } from '@volar/vscode/node';
 import * as vscode from 'vscode';
-import * as lsp from 'vscode-languageclient/node';
 
-let client: lsp.BaseLanguageClient;
+let client: BaseLanguageClient;
 
 export async function activate(context: vscode.ExtensionContext) {
-
-	const initializationOptions: InitializationOptions = {
-		diagnosticModel: DiagnosticModel.Pull, // not matter because pug diagnostic is very fast
-	};
 	const serverModule = vscode.Uri.joinPath(context.extensionUri, 'server.js');
 	const runOptions = { execArgv: <string[]>[] };
 	const debugOptions = { execArgv: ['--nolazy', '--inspect=' + 6009] };
-	const serverOptions: lsp.ServerOptions = {
+	const serverOptions: ServerOptions = {
 		run: {
 			module: serverModule.fsPath,
-			transport: lsp.TransportKind.ipc,
+			transport: TransportKind.ipc,
 			options: runOptions
 		},
 		debug: {
 			module: serverModule.fsPath,
-			transport: lsp.TransportKind.ipc,
+			transport: TransportKind.ipc,
 			options: debugOptions
 		},
 	};
-	const clientOptions: lsp.LanguageClientOptions = {
+	const clientOptions: LanguageClientOptions = {
 		documentSelector: [{ language: 'jade' }],
-		initializationOptions,
 	};
-	client = new lsp.LanguageClient(
+	client = new LanguageClient(
 		'pug-language-server',
 		'Pug Language Server',
 		serverOptions,
@@ -38,13 +32,10 @@ export async function activate(context: vscode.ExtensionContext) {
 	);
 	client.start();
 
-	return {
-		volarLabs: {
-			version: '1.6.2',
-			languageClients: [client],
-			languageServerProtocol: protocol,
-		},
-	} satisfies ExportsInfoForLabs;
+	const labsInfo = createLabsInfo(serverProtocol);
+	labsInfo.addLanguageClient(client);
+
+	return labsInfo.extensionExports;
 }
 
 export function deactivate(): Thenable<any> | undefined {
