@@ -36,7 +36,7 @@ importers:
         specifier: ~2.4.0-alpha.6
         version: 2.4.0-alpha.7
       '@volar/pug-language-server':
-        specifier: 1.1.2
+        specifier: 1.2.0
         version: link:../language-server
       '@volar/vscode':
         specifier: ~2.4.0-alpha.6
