@@ -6,9 +6,7 @@ require('esbuild').context({
 	bundle: true,
 	metafile: process.argv.includes('--metafile'),
 	outdir: './dist/node',
-	external: [
-		'vscode',
-	],
+	external: ['vscode'],
 	format: 'cjs',
 	platform: 'node',
 	tsconfig: '../../tsconfig.build.json',
@@ -17,7 +15,7 @@ require('esbuild').context({
 		{
 			name: 'umd2esm',
 			setup(build) {
-				build.onResolve({ filter: /^(vscode-.*|estree-walker|jsonc-parser)/ }, args => {
+				build.onResolve({ filter: /^(vscode-.*-languageservice|jsonc-parser)/ }, args => {
 					const pathUmdMay = require.resolve(args.path, { paths: [args.resolveDir] })
 					// Call twice the replace is to solve the problem of the path in Windows
 					const pathEsm = pathUmdMay.replace('/umd/', '/esm/').replace('\\umd\\', '\\esm\\')
